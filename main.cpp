@@ -19,7 +19,7 @@ int main() {
         case 0:
             return 0;
         case 1:
-            openFile("index.html");
+            openFile("../index.html");
             break;
     }
 

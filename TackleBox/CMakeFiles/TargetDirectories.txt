@@ -1,0 +1,3 @@
+/Users/andrewhinckley/Desktop/PhishBait/TackleBox/CMakeFiles/PhishBait.dir
+/Users/andrewhinckley/Desktop/PhishBait/TackleBox/CMakeFiles/edit_cache.dir
+/Users/andrewhinckley/Desktop/PhishBait/TackleBox/CMakeFiles/rebuild_cache.dir
