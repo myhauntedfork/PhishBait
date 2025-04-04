@@ -1,5 +1,5 @@
 PLATFORM=$(uname)
-PROJECT_DIR="TackleBox"
+PROJECT_DIR="build"
 mkdir $PROJECT_DIR
 cd $PROJECT_DIR
 
