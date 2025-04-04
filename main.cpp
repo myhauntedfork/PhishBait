@@ -56,6 +56,8 @@ int homeDisplay(int& choice) {
 void clearTerminal() {
     #ifdef _WIN32
         system("cls");
+    #elif __APPLE__
+        system("clear && printf '\e[3J'");
     #else
         system("clear");
     #endif
