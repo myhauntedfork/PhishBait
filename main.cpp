@@ -4,20 +4,25 @@
 
 void openFile(const std::string& file);
 int homeDisplay(int& choice);
+void clearTerminal();
 
 std::string phishBaitVersion = "v1.0.0";
 
 int main() {
-    int choice;
-    homeDisplay(choice);
-    switch(choice) {
-        case 0:
-            return 0;
-        case 1:
-            openFile("../tacklebox/index.html");
-            break;
+    clearTerminal();
+    while(true) {
+        int choice;
+        clearTerminal();
+        homeDisplay(choice);
+        switch(choice) {
+            case 0:
+                clearTerminal();
+                return 0;
+            case 1:
+                openFile("../tacklebox/index.html");
+                break;
+        }
     }
-
     return 0;
 }
 
@@ -46,4 +51,12 @@ int homeDisplay(int& choice) {
     std::cin >> choice;
 
     return choice;
+}
+
+void clearTerminal() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
